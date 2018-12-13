@@ -1,0 +1,135 @@
+<div class="topnav">
+  <a class="active" href="http://flip3.engr.oregonstate.edu:6530/">Home</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/players" class="button block black">Players</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/teams" class="button block black">Teams</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/positions" class="button block black">Positions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/stadiums" class="button block black">Stadiums</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/highlights" class="button block black">Highlights</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/championships" class="button block black">Championships</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/divisions" class="button block black">Divisions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/uniforms" class="button block black">Uniforms</a>
+</div>
+<br>
+
+<h1 class="title1"> WELCOME TO THE NFL DATABASE</h1>
+
+
+<div class="slideshow-container">
+	<div class="mySlides fade">
+		<div class="numbertext">1 / 3</div>
+		<img src="/static/img1.jpg" style="width:100%">
+		<div class="text">Todd Gurley</div>
+	</div>
+
+	<div class="mySlides fade">
+		<div class="numbertext">2 / 3</div>
+		<img src="/static/img2.jpg" style="width:100%">
+		<div class="text">Russell Wilson</div>
+	</div>
+
+	<div class="mySlides fade">
+		<div class="numbertext">3 / 3</div>
+		<img src="/static/img3.jpg" style="width:100%">
+		<div class="text">JJ Watt</div>
+	</div>
+
+	<a class="prev" onclick="plusSlides(-1)">&#10094</a>
+	<a class="next" onclick="plusSlides(1)">&#10095</a>
+</div>
+<br>
+
+
+<div style="text-align:center">
+	
+
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+
+<div>
+	<div class="box">
+		<h2>About</h2>
+			<div class="tbox">The National Football League is a professional American football league consisting of 32 teams. There are roughly 50 players per team and many positions on offense and defense.  There are two conferences and several divisions of each conference. The three positions of quarterback, running back and wide receiver are primarily responsible for scoring points in the game. Alternatively, the defensive positions of defensive end and linebacker are primarily responsible for preventing the opposing team from scoring points. Each team has a starting player for each position, meaning that player spends the most time in the game.</div>
+	</div>
+	
+	<div class="box">
+		<h2>Downloads</h2>
+			<div class="dbox">
+				<a href="/static/example.txt" download>
+				<button class="btn">Click here</button>
+				</a>
+			</div>
+	</div>
+
+	<div class="box">
+		<h2>Links</h2>
+			<div class="lbox">
+				<ul>
+					<li><a href="https://www.nfl.com/">NFL.com</a></li>
+					<li><a href="https://www.nflshop.com/">NFL Shop</a></li>
+					<li><a href="https://fantasy.nfl.com/">Fantasy Football</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/National_Football_League">Learn More</a></li>
+				</ul>
+				
+<div class="cite">Photos: 1. https://www.si.com/nfl/2018/07/25/todd-gurley-contract-los-angeles-rams-2018 </div>
+<div class="cite">2. http://www.nfl.com/photos/0ap1000000204416 </div>
+<div class="cite">3. https://www.abcactionnews.com/homepage-showcase/jj-watt-offers-to-pay-for-the-funerals-of-the-santa-fe-school-shooting-victims</div>
+
+
+			</div>
+	</div>
+</div>
+
+<br>
+
+<script>
+var slideIndex = 0;
+var slides = document.getElementsByClassName("mySlides");
+
+showSlides();
+
+
+function showSlides() {
+    var i;
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+
+// Thumbnail image controls
+function currentSlide(n) {
+	var i;
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndex = n;
+	slides[n-1].style.display = "block";
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  var newSlide = slideIndex + n;
+  if (newSlide < 4 && newSlide > 0) {
+	  currentSlide(newSlide);
+  }
+}
+
+
+
+
+
+</script>
+
+
+
+
+

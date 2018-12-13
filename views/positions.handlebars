@@ -1,0 +1,43 @@
+<div class="topnav">
+  <a  href="http://flip3.engr.oregonstate.edu:6530/">Home</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/players" class="button block black">Players</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/teams" class="button block black">Teams</a>
+      <a class="active" href="http://flip3.engr.oregonstate.edu:6530/positions" class="button block black">Positions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/stadiums" class="button block black">Stadiums</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/highlights" class="button block black">Highlights</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/championships" class="button block black">Championships</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/divisions" class="button block black">Divisions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/uniforms" class="button block black">Uniforms</a>
+</div>
+
+
+<h3>Current Positions:</h3>
+<div class="table1">
+<table>
+    <thead> 
+        <th>Name</th> 
+        <th>Side</th> 
+    </thead> 
+    <tbody> 
+        {{#each positions}} 
+        <tr> 
+            <td>{{name}}</td> 
+            <td>{{side}}</td> 
+            <td class="tdlast"><button class="myButton" onclick="deletePosition({{positionid}})">Delete</button></td>
+            <!-- <td><a href="/position/{{id}}">Update</a></td> -->
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> <br>
+	
+<form id="addPosition" action="/positions" method="post">
+	<h3> Add a new position: </h3>
+    Name: <input type="text" name="name" required><br>
+    Side:<input type="radio" id="offense" name="side" value="Offense" checked/>
+		<label for="offense">Offense</label>
+		<input type="radio" id="defense" name="side" value="Defense" />
+		<label for="defense">Defense</label><br>
+	<input type="submit" value="Submit">
+</form>
+
+</div>

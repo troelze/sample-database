@@ -1,0 +1,93 @@
+<div class="topnav">
+  <a href="http://flip3.engr.oregonstate.edu:6530/">Home</a>
+      <a  class="active" href="http://flip3.engr.oregonstate.edu:6530/players" class="button block black">Players</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/teams" class="button block black">Teams</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/positions" class="button block black">Positions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/stadiums" class="button block black">Stadiums</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/highlights" class="button block black">Highlights</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/championships" class="button block black">Championships</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/divisions" class="button block black">Divisions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/uniforms" class="button block black">Uniforms</a>
+</div>
+
+<h3>Current Players:</h3>
+
+
+<div class="table1">
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Team</th>
+        <th>Jersey #</th>  
+		<th>Position</th> 
+    </thead> 
+    <tbody> 
+        {{#each players}} 
+        <tr> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{mascot}}</td> 
+            <td>{{jersey}}</td>
+			<td>{{name}}</td> 
+            <td class="tdlast"><button class="myButton" onclick="deletePlayer({{playerid}})">Delete</button></td>
+            <td class="tdlast"><a class="myButton2" href="/players/update-player/{{playerid}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+
+<form id="addplayer" action="/players" method="post">
+	<h3> Add a new player: </h3>
+    First name: <input type="text" name="fname" required><br>
+    Last name: <input type="text" name="lname" required><br>
+    Team: <select name="teamid"> 
+        {{#each teams}}
+        <option value="{{teamid}}">{{mascot}}</option>
+        {{/each}}
+    </select><br>
+	Position: <select name="positionid"> 
+        {{#each positions}}
+        <option value="{{positionid}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Jersey #: <input type="number" name="jersey" required><br>
+    <input type="submit" value="Submit">
+</form>
+
+    <form id="searchplayer" action="/players/search-name/" method="get">
+	<h3> Filter players </h3>
+    By full name:   
+    <input type="text" name="fname" required>
+    <input type="text" name="lname" required>
+    <input type="submit" value="Search">
+    </form><br>
+
+    <form id="searchplayer" action="/players/search/" method="get">
+    By team: 
+    <select name="teamid"> 
+        {{#each teams}}
+        <option value="{{teamid}}">{{mascot}}</option>
+        {{/each}}
+    </select>
+    <input type="submit" value="Filter">
+    </form><br>
+
+    <form id="searchplayer" action="/players/search/" method="get">
+	By position:
+	<select name="positionid"> 
+        {{#each positions}}
+        <option value="{{positionid}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <input type="submit" value="Filter">
+    </form><br>
+
+    <form id="searchplayer" action="/players/search/" method="get">
+	By jersey #: 
+    <input type="number" name="jersey" required>
+    <input type="submit" value="Search">
+    </form><br>
+
+
+</div>

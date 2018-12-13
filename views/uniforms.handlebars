@@ -1,0 +1,78 @@
+<div class="topnav">
+  <a  href="http://flip3.engr.oregonstate.edu:6530/">Home</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/players" class="button block black">Players</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/teams" class="button block black">Teams</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/positions" class="button block black">Positions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/stadiums" class="button block black">Stadiums</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/highlights" class="button block black">Highlights</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/championships" class="button block black">Championships</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/divisions" class="button block black">Divisions</a>
+      <a class="active" href="http://flip3.engr.oregonstate.edu:6530/uniforms" class="button block black">Uniforms</a>
+</div>
+
+
+<h3>Current Colors:</h3>
+
+<div class="table1">
+<table>
+    <thead> 
+        <th>Name</th> 
+    </thead> 
+    <tbody> 
+        {{#each colors}} 
+        <tr> 
+            <td>{{name}}</td> 
+            <td class="tdlast"><button class="myButton" onclick="deleteColor({{colorid}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table><br>
+
+<form id="addColor" action="/uniforms" method="post">
+	<h3> Add a new color: </h3>
+    Name: <input type="text" name="name" required><br>
+    
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+<table>
+    <thead> 
+		<th>Team</th> 
+		<th>Color</th>
+    </thead> 
+    <tbody> 
+        {{#each uniforms}} 
+        <tr> 
+            <td>{{mascot}}</td> 
+			<td>{{name}}</td>
+            <td class="tdlast"><button class="myButton" onclick="deleteUniform({{uniformid}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> <br>
+	
+    <form id="addUniform" action="/uniforms/update" method="post">
+	<h3> Associate a color with a team: </h3>
+    Team: <select name="teamid"> 
+        {{#each teams}}
+        <option value="{{teamid}}">{{mascot}}</option>
+        {{/each}}
+    </select><br>
+	Color: <select name="colorid"> 
+        {{#each colors}}
+        <option value="{{colorid}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    
+    <input type="submit" value="Submit">
+    </form>
+
+
+    </div>
+
+
+
+

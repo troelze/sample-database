@@ -1,0 +1,34 @@
+<div class="topnav">
+  <a href="http://flip3.engr.oregonstate.edu:6530/">Home</a>
+      <a   href="http://flip3.engr.oregonstate.edu:6530/players" class="button block black">Players</a>
+      <a class="active" href="http://flip3.engr.oregonstate.edu:6530/teams" class="button block black">Teams</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/positions" class="button block black">Positions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/stadiums" class="button block black">Stadiums</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/highlights" class="button block black">Highlights</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/championships" class="button block black">Championships</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/divisions" class="button block black">Divisions</a>
+      <a href="http://flip3.engr.oregonstate.edu:6530/uniforms" class="button block black">Uniforms</a>
+</div>
+
+<h3>Update {{team.mascot}} :</h3>
+
+<form id="update-team" action="/teams" method="post">
+    Mascot: <input type="text" name="mascot" value="{{team.mascot}}" required><br>
+    Stadium: <select name="stadiumid"> 
+        <option value="{{team.stadiumid}}">{{team.stadium}}</option>
+        {{#each stadiums}}
+        <option value="{{stadiumid}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Division: <select name="divisionid">
+        <option value="{{team.divisionid}}">{{team.division}}</option>
+        {{#each divisions}}
+        <option value="{{divisionid}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+	Head Coach: <input type="text" name="headCoach" value="{{team.headCoach}}" required><br>
+</form><br>
+<button onclick="updateTeam({{team.teamid}})">Update</button>
+
+
+
