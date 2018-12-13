@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="/static/styles.css">
+
+	<title>NFL Database</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	{{#each jsscripts}}
+	<script src="/static/{{this}}"></script>
+	{{/each}}
+</head>
+<body>
+	{{{body}}}
+</body>
+</html>
